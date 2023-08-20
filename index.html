@@ -158,9 +158,21 @@
             startButton.style.display = 'none';
             outputDiv.innerHTML = '';
 
-            const user_name = prompt("Hey there! What's your nickname? ");
-            const a = parseInt(prompt("Enter any lucky number: "));
-            const b = parseInt(prompt("Enter any magic number: "));
+            let user_name = '';
+            let a = NaN;
+            let b = NaN;
+
+            while (user_name === '' || isNaN(a) || isNaN(b)) {
+                if (user_name === '') {
+                    user_name = prompt("Hey there! What's your nickname?");
+                }
+                if (isNaN(a)) {
+                    a = parseInt(prompt("Enter any lucky number:"));
+                }
+                if (isNaN(b)) {
+                    b = parseInt(prompt("Enter any magic number:"));
+                }
+            }
 
             const sum_result = a + b;
             const diff_result = b - a;
